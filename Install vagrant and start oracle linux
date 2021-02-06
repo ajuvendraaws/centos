@@ -1,0 +1,22 @@
+Install vagrant and start oracle linux
+
+Install vagrant:
+	yum -y install https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.rpm (check for the latest version on the site)
+
+Install oracle virtual box.
+sudo yum install kernel-devel kernel-devel-$(uname -r) kernel-headers kernel-headers-$(uname -r) make patch gcc
+sudo wget https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo -P /etc/yum.repos.d
+sudo yum install VirtualBox-5.2
+yum --showduplicates list <package>
+
+
+Create a working directory for your development project and from within that directory, issue the following commands, subsituting the url for one of the following, depending on the release of Oracle Linux you want:
+
+Oracle Linux 8: https://oracle.github.io/vagrant-projects/boxes/oraclelinux/8.json
+Oracle Linux 7: https://oracle.github.io/vagrant-projects/boxes/oraclelinux/7.json
+Oracle Linux 6: https://oracle.github.io/vagrant-projects/boxes/oraclelinux/6.json
+$ vagrant init oraclelinux/{release} <box json url>
+$ vagrant up
+$ vagrant ssh
+
+vagrant init oraclelinux/8 https://oracle.github.io/vagrant-projects/boxes/oraclelinux/8.json

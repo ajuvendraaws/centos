@@ -1,0 +1,25 @@
+Installing Visual Studio Code on CentOS
+Perform the following steps to install Visual Studio Code on your CentOS system:
+
+Start by importing the Microsoft GPG key:
+
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+Next, create the following repo file to enable the Visual Studio Code repository:
+
+sudo nano /etc/yum.repos.d/vscode.repo
+Paste the following content into the file:
+
+/etc/yum.repos.d/vscode.repo
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+Copy
+Save the file and close your text editor.
+
+Once the repository is enabled, install the latest version of Visual Studio Code by typing:
+
+sudo yum install code
+That’s it. Visual Studio Code has been installed on your CentOS desktop and you can start using it.
